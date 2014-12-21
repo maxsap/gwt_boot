@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:t="urn:import:fr.ekito.gwt.client.ui"
+	xmlns:c="urn:import:fr.ekito.gwt.client.ui.component"
+	xmlns:b="urn:import:com.github.gwtbootstrap.client.ui">
+	<!-- import for i18n messages -->
+	<ui:with type="fr.ekito.gwt.client.resource.Messages" field="messages" />
+	<!-- import for resources bundle -->
+	<ui:with type="fr.ekito.gwt.client.resource.ApplicationResources"
+		field="res" />
+
+
+	<g:DockLayoutPanel>
+		<!-- Top panel -->
+		<g:north size="250">
+			<g:HTMLPanel>
+				<b:Heading size="1" text="{messages.helloMessage}"/>
+				<!-- main toolbox -->
+				<g:FlowPanel styleName="{res.style.todoPanel}">
+					<g:TextBox text="{messages.todoTitle}" ui:field="textBox" />
+					<b:ButtonGroup>
+					<b:Button 
+						text="{messages.addButton}" ui:field="addButton" />
+					<b:Button 
+						text="{messages.clearButton}" ui:field="clearButton" />
+					<b:Button 
+						text="{messages.loadButton}" ui:field="loadButton" />
+					</b:ButtonGroup>	
+				</g:FlowPanel>
+			</g:HTMLPanel>
+		</g:north>
+
+		<g:center>
+			<g:ScrollPanel>
+				<g:FlowPanel ui:field="todoPanel">
+				</g:FlowPanel>
+			</g:ScrollPanel>
+		</g:center>
+
+	</g:DockLayoutPanel>
+</ui:UiBinder> 
